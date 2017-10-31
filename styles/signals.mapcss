@@ -414,6 +414,34 @@ node|z17-[railway=signal]["railway:signal:direction"]["railway:signal:stop"="DE-
 	}
 }
 
+/****************************/
+/* DE tram stop post Sh 7 as sign*/
+/****************************/
+node|z17-[railway=signal]["railway:signal:direction"]["railway:signal:stop"="DE-BOStrab:sh7"]["railway:signal:stop:form"=sign]
+{
+	z-index: 1000;
+	text: "railway:signal:stop:caption";
+	text-color: black;
+	text-halo-radius: 3;
+	text-halo-color: white;
+	text-offset-x: 0;
+	text-offset-y: 12;
+	icon-image: "icons/de/ne5-ds301-22.png";
+	icon-width: 7.5;
+	icon-height: 11;
+	font-size:8;
+	text-allow-overlap: true;
+	allow-overlap: true;
+}
+
+@supports (user-agent: josm) {
+	node|z17-[railway=signal]["railway:signal:direction"]["railway:signal:stop"="DE-BOStrab:sh7"]["railway:signal:stop:form"=sign]
+	{
+		text-offset-x: eval(length(tag("railway:signal:stop:caption")) * (0 - 3) - 6);
+		text-offset-y: -10;
+	}
+}
+
 /*********************************************/
 /* DE shunting stop sign Ra 10               */
 /* AT shunting stop sign "Verschubhalttafel" */
